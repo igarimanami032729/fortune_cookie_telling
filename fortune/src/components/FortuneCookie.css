@@ -1,0 +1,353 @@
+@font-face {
+  font-family: "SfHambakneun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+.cookie-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  position: relative;
+}
+
+.guide-text {
+  font-family: "SfHambakneun";
+  margin-top: 30px;
+  font-size: 25px;
+  color: #d5cb07;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+}
+
+.guide-text-two {
+  font-family: "SfHambakneun";
+  margin-top: 10px;
+  font-size: 23px;
+  color: #f0e435;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+}
+
+.cookie.closed {
+  width: 200px;
+  height: 200px;
+  background-image: url("/public/images/fortune_cookie.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+.cookie.closed:hover {
+  transform: scale(1.1);
+  animation: wobble 0.5s ease-in-out;
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.cookie.broken {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.piece {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 20px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.piece.left {
+  left: 0;
+  background-image: url("/public/images/break_fortune1.png");
+  animation: breakLeft 0.4s forwards;
+}
+
+.piece.right {
+  right: 0;
+  background-image: url("/public/images/break_fortune2.png");
+  animation: breakRight 0.4s forwards;
+}
+
+@keyframes breakLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-40px) rotate(-20deg);
+  }
+}
+
+@keyframes breakRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(40px) rotate(20deg);
+  }
+}
+
+/* 파티클 효과 */
+.particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  animation: particleExplode 1s ease-out forwards;
+}
+
+.particle-1 {
+  background: #ffd700;
+  animation-delay: 0s;
+}
+.particle-2 {
+  background: #ffed4e;
+  animation-delay: 0.05s;
+}
+.particle-3 {
+  background: #ffa500;
+  animation-delay: 0.1s;
+}
+.particle-4 {
+  background: #ff6347;
+  animation-delay: 0.15s;
+}
+.particle-5 {
+  background: #ffd700;
+  animation-delay: 0.2s;
+}
+.particle-6 {
+  background: #ffed4e;
+  animation-delay: 0.25s;
+}
+.particle-7 {
+  background: #ffa500;
+  animation-delay: 0.3s;
+}
+.particle-8 {
+  background: #ff6347;
+  animation-delay: 0.35s;
+}
+.particle-9 {
+  background: #ffd700;
+  animation-delay: 0.4s;
+}
+.particle-10 {
+  background: #ffed4e;
+  animation-delay: 0.45s;
+}
+.particle-11 {
+  background: #ffa500;
+  animation-delay: 0.5s;
+}
+.particle-12 {
+  background: #ff6347;
+  animation-delay: 0.55s;
+}
+
+@keyframes particleExplode {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+        calc(-50% + var(--tx, 0px)),
+        calc(-50% + var(--ty, 0px))
+      )
+      scale(1);
+    opacity: 0;
+  }
+}
+
+.particle-1 {
+  --tx: 60px;
+  --ty: -60px;
+}
+.particle-2 {
+  --tx: -60px;
+  --ty: -60px;
+}
+.particle-3 {
+  --tx: 60px;
+  --ty: 60px;
+}
+.particle-4 {
+  --tx: -60px;
+  --ty: 60px;
+}
+.particle-5 {
+  --tx: 80px;
+  --ty: 0px;
+}
+.particle-6 {
+  --tx: -80px;
+  --ty: 0px;
+}
+.particle-7 {
+  --tx: 0px;
+  --ty: 80px;
+}
+.particle-8 {
+  --tx: 0px;
+  --ty: -80px;
+}
+.particle-9 {
+  --tx: 50px;
+  --ty: -30px;
+}
+.particle-10 {
+  --tx: -50px;
+  --ty: 30px;
+}
+.particle-11 {
+  --tx: 30px;
+  --ty: 50px;
+}
+.particle-12 {
+  --tx: -30px;
+  --ty: -50px;
+}
+
+/* 쪽지 */
+.paper {
+  width: 180px;
+  padding: 20px;
+  background: white;
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  animation: paperUp 0.6s forwards;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 3px solid;
+}
+
+.fortune-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  animation: iconBounce 0.8s ease-in-out;
+}
+
+@keyframes iconBounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes paperUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.paper p {
+  font-size: 15px;
+  text-align: center;
+  color: #333;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* 운세 타입별 스타일 */
+.fortune-money {
+  border-color: #ffd700;
+  background: linear-gradient(135deg, #fffef7 0%, #fff9e6 100%);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+}
+
+.fortune-love {
+  border-color: #ff69b4;
+  background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 100%);
+  box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
+}
+
+.fortune-health {
+  border-color: #32cd32;
+  background: linear-gradient(135deg, #f0fff4 0%, #e6f9e6 100%);
+  box-shadow: 0 4px 20px rgba(50, 205, 50, 0.4);
+}
+
+.fortune-luck {
+  border-color: #9370db;
+  background: linear-gradient(135deg, #f9f7ff 0%, #f0e6ff 100%);
+  box-shadow: 0 4px 20px rgba(147, 112, 219, 0.4);
+}
+
+.fortune-success {
+  border-color: #ff8c00;
+  background: linear-gradient(135deg, #fff8f0 0%, #ffede6 100%);
+  box-shadow: 0 4px 20px rgba(255, 140, 0, 0.4);
+}
+
+.retry-btn {
+  margin-top: 151px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ffb74d;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.retry-btn:hover {
+  background-color: #ffa726;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.retry-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}

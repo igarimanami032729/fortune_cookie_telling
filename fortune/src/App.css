@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "EutmanGungseo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKGUNG.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://thumbs.dreamstime.com/b/modern-astrology-banner-vintage-horoscope-zodiac-wheel-signs-constellations-sun-moon-face-clouds-stars-havently-mystical-277290840.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  min-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-family: "EutmanGungseo";
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: rgb(250, 250, 249);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  padding: 14px 26px;
+  background-color: #ffb74d;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: #ffa726;
+}
+
+.fortune-box {
+  margin-top: 40px;
+  padding: 25px;
+  border: 2px dashed #ffb74d;
+  border-radius: 12px;
+  font-size: 20px;
+  background: #fff8e1;
+}
